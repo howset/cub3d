@@ -8,6 +8,36 @@ The get_next_line function is used extensively here to parse the .cub file line-
 ### Header info
 The purpose here is to make sure that all necessary info about the textures & floor-ceiling color can be extracted properly. The idea is rather simple, basically to check if each line starts with the recognizable symbol(s) such as NO, EA, C, etc. , then store the info contained on that line to the t_map struct.
 
+```c
+if (check_headerid(line))
+	load_header(cub3d, line);
+```
+
+where `check_headerid` is
+```c
+int	check_headerid(char *line)
+{
+	if (ft_strncmp(line, "NO ", 3) == 0
+		...
+		...
+		|| ft_strncmp(line, "C ", 2) == 0)
+		return (1);
+	return (0);
+}
+```
+
+and `load_header` is
+```c
+void	load_header(t_data *cub3d, char *line)
+{
+	if (ft_strncmp(line, "NO ", 3) == 0)
+		get_tex(line, &cub3d->map_info.no_tex, "NO");
+		...
+		...
+		get_col(cub3d, line, &cub3d->map_info.ce_col, "C");
+}
+```
+
 Checks have to be done to make sure that invalid inputs are dealt with properly, e.g.: identical symbols (2 NOs or 2 Fs), failure in finding the file, etc.
 
 A little complication was encountered for the colour part. Since the textures part only requires for the path to the texture files to be verified and saved, no particular problem arose here, however the colours have have to be processed from their RGB components to yield a final colour value. During the course of the project, this was done in the rendering/display module of the program since at this point the struct only stores the complete string from the .cub header. But then so many scenarios have to be considered for which kind of input should be considered valid/invalid (spaces after comma, before comma) we thought it may be prudent to just move it to the mapload module and take care of everything here.
