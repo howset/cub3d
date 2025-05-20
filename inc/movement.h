@@ -14,7 +14,7 @@ void	move_left(t_player *player, t_data *cub3d);
 void	move_rotate(t_player *player, float angle_speed);
 
 //coll_detect.c
-bool	touch(float pos_x, float pos_y, t_data *cub3d);
 void	try_move(t_player *player, float dx, float dy, t_data *cub3d);
+bool	touch(float pos_x, float pos_y, t_data *cub3d);
 
 #endif
