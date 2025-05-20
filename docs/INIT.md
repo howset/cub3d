@@ -7,7 +7,7 @@ The init step consist of two sub-modules, one has something to do with putting t
 Basically the `put_player` function iterates over the map (again!) to find the starting position and sets a correct direction accordingly.
 
 The lines
-```
+```c
 cub3d->player.x = (x * BLOCK) + (BLOCK / 2);
 cub3d->player.y = (y * BLOCK) + (BLOCK / 2);
 ```

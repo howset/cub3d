@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 13:12:39 by reldahli          #+#    #+#             */
-/*   Updated: 2025/05/20 14:26:48 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/05/20 14:28:30 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ bool	touch(float pos_x, float pos_y, t_data *cub3d)
 
 	if (pos_x < 0 || pos_y < 0)
 		return (true);
-	x = (int)((pos_x + 0.001) / BLOCK);
-	y = (int)((pos_y + 0.001) / BLOCK);
+	x = (int)(pos_x / BLOCK);
+	y = (int)(pos_y / BLOCK);
 	if (y >= cub3d->map_info.map_rows || x >= cub3d->map_info.map_cols)
 		return (true);
 	if (cub3d->map_info.map[y] && x < (int)ft_strlen(cub3d->map_info.map[y])

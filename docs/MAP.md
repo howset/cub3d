@@ -31,7 +31,7 @@ I dont want to write this one so here is a GPT generated explanation:
 
 #### How It Works
 1. Step 1: Initialization and Iteration Setup
-```
+```c
 int	verify_boundaries(t_data *cub3d)
 {
     int	i;
@@ -43,7 +43,7 @@ int	verify_boundaries(t_data *cub3d)
 The function initializes row counter i and prepares to iterate through every row in the map.
 
 2. Step 2: Inner Loop - Column Iteration
-```
+```c
         j = 0;
         while (j < (int)ft_strlen(cub3d->map_info.map[i]))
         {
@@ -51,7 +51,7 @@ The function initializes row counter i and prepares to iterate through every row
 For each row, it sets up another counter j to iterate through each column in that row.
 
 3. Step 3: Position Validation
-```
+```c
             if (!validate_position(cub3d, i, j))
                 return (0);
             j++;
@@ -59,6 +59,7 @@ For each row, it sets up another counter j to iterate through each column in tha
         i++;
     }
     return (1);
+}
 ```
 For each cell at position (i,j), it calls `validate_position()`. 
 If any position fails validation (returns 0), the entire function immediately returns 0, 
