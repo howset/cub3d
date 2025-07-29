@@ -14,7 +14,7 @@ The bonus included are:
 3. Audio play
 
 ## Docs
-[[Documentation](./docs/MAIN.md)] for each module. Rather a general overview. Specific function documentation is to be examined on the function's implementation itself. The functions may look very much jumbled. This is due to the fact that many functions have to be separated in accordance to the norm, but this makes our suboptimal approach even more confusing LOL.
+[[Documentation](./docs/MAIN.md)] for each module. Rather a general overview. Specific function documentation is to be examined on the function's implementation itself. However, the functions may look very much jumbled. This is due to the fact that many functions have to be separated in accordance to the norm. This makes our suboptimal approach(es) even more confusing LOL.
 
 ## Sources
 #### Tutorial
